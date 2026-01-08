@@ -1,0 +1,12 @@
+google-adk
+google-generativeai
+langchain
+langchain-openai
+openai
+streamlit
+python-dotenv
+mcp
+uvicorn
+fastapi
+httpx
+pydantic
