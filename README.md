@@ -28,16 +28,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Configure your own `GOOGLE_API_KEY` and `OPENAI_API_KEY` locally. Model availability and usage depend on the provider accounts. Activate the same environment in four terminals and run these commands from the repository root:
+Configure your own `GOOGLE_API_KEY` and `OPENAI_API_KEY` locally. Model availability and usage depend on the provider accounts. Activate the same environment in three terminals for the flight service, hotel service, and Streamlit UI. Run these commands from the repository root:
 
 | Process | Command | Default port |
 |---|---|---|
 | Flight agent | `python -m flight_search_app.flight_server` | 8000 |
 | Hotel agent | `python -m hotel_search_app.hotel_server` | 8003 |
-| Host agent | `python -m itinerary_planner.itinerary_server` | 8005 |
 | Interface | `streamlit run itinerary_planner/streamlit_ui.py` | 8501 |
 
-Open `http://localhost:8501`. The modules are at the repository root; an additional `Agent2/` directory is not required.
+Open `http://localhost:8501`. Streamlit invokes the itinerary host directly in its own process. To expose that host to an external HTTP client as well, optionally run `python -m itinerary_planner.itinerary_server` on port 8005 in a fourth terminal. The modules are at the repository root; an additional `Agent2/` directory is not required.
 
 ## Example
 
